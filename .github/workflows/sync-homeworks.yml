@@ -1,0 +1,55 @@
+# Mirror homework files to the student repository otus-mlsd-homeworks.
+#
+# Secret (required): HOMEWORKS_REPO_TOKEN
+#   Fine-grained PAT or classic PAT with Contents: Read and write
+#   on the student repo. Store it in this program repo:
+#   Settings → Secrets and variables → Actions → HOMEWORKS_REPO_TOKEN
+#
+#   GITHUB_TOKEN from this workflow cannot push to another repository.
+#
+# Optional variable: HOMEWORKS_REPO (default NickOsipov/otus-mlsd-homeworks)
+#   Settings → Secrets and variables → Actions → Variables
+name: Sync homeworks
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "homeworks/**"
+      - "templates/design-doc-template.md"
+      - "templates/checklist.md"
+      - "scripts/sync-homeworks.sh"
+      - "scripts/strip_teacher_notes.py"
+      - "scripts/write_student_readme.py"
+      - ".github/workflows/sync-homeworks.yml"
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout program
+        uses: actions/checkout@v4
+
+      - name: Checkout student homeworks repo
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ vars.HOMEWORKS_REPO || 'NickOsipov/otus-mlsd-homeworks' }}
+          token: ${{ secrets.HOMEWORKS_REPO_TOKEN }}
+          path: .sync-homeworks-dest
+
+      - name: Sync student slice
+        run: ./scripts/sync-homeworks.sh .sync-homeworks-dest
+
+      - name: Commit and push
+        working-directory: .sync-homeworks-dest
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to push"
+            exit 0
+          fi
+          git commit -m "chore: sync homeworks from otus-mlsd-program@${GITHUB_SHA::7}"
+          git push
