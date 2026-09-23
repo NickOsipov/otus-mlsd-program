@@ -21,7 +21,7 @@
 
 ## Для разделов design doc
 
-- диаграммы (архитектура, потоки, HITL): [Mermaid](https://mermaid.js.org/) в Markdown — предпочтительно, файл версионируется текстом; пример — `[templates/mermaid-example.md](../templates/mermaid-example.md)`. Альтернативы — [Miro](https://miro.com/), [draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/), PlantUML. Доска в Miro — личная: на курсе нет групповой работы и совместного ревью. В сдачу идёт экспорт PNG/SVG в репозиторий (`diagrams/`), а не ссылка на доску в чате;
+- диаграммы (архитектура, потоки, HITL): [Mermaid](https://mermaid.js.org/) в Markdown — предпочтительно, файл версионируется текстом. Альтернативы — [Miro](https://miro.com/), [draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/), PlantUML. Доска в Miro — личная: на курсе нет групповой работы и совместного ревью. В сдачу идёт экспорт PNG/SVG в репозиторий (`diagrams/`), а не ссылка на доску в чате;
 - расчёты нагрузки, масштабирования и экономики (§4.3, §4.8, §6): Google Sheets, Excel или Numbers — формулы и допущения на отдельном листе; Jupyter допускается, но не обязателен;
 - калькуляторы облачных цен для §6: [Yandex Cloud](https://yandex.cloud/ru/prices) или прайс выбранного провайдера в теме проекта;
 - презентация к защите: Google Slides, PowerPoint и экспорт в pdf — ориентир 10 слайдов.
