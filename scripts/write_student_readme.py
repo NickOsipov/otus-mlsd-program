@@ -11,8 +11,6 @@ PREFACE = """# OTUS ML System Design — домашние задания
 Студенческий срез курса: формулировки домашних заданий, шаблон design doc и чеклист самопроверки.
 
 - Шаблон: [`templates/design-doc-template.md`](templates/design-doc-template.md)
-- Чеклист: [`templates/checklist.md`](templates/checklist.md)
-- Обзор сдач: [`homeworks/homeworks-overview.md`](homeworks/homeworks-overview.md)
 
 Работа выполняется **индивидуально** в одном сквозном design doc в **своём** git-репозитории. Тема фиксируется после занятия 1 и не меняется. Peer review и групповые сдачи не применяются.
 

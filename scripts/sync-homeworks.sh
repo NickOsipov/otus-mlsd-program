@@ -37,10 +37,6 @@ shopt -u nullglob
 cp "${ROOT}/templates/design-doc-template.md" "${STAGING}/templates/design-doc-template.md"
 cp "${ROOT}/templates/checklist.md" "${STAGING}/templates/checklist.md"
 
-python3 "${ROOT}/scripts/write_student_readme.py" \
-  "${ROOT}/homeworks/homeworks-overview.md" \
-  "${STAGING}/README.md"
-
 cat > "${STAGING}/.gitignore" <<'EOF'
 .DS_Store
 .venv
