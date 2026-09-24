@@ -5,7 +5,7 @@
 #   ./scripts/sync-homeworks.sh /path/to/otus-mlsd-homeworks
 #
 # Source of truth is this program repo. The destination is overwritten to match
-# the student slice (homeworks + two templates + generated README).
+# the student slice (homeworks + two templates + README).
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -36,6 +36,7 @@ shopt -u nullglob
 
 cp "${ROOT}/templates/design-doc-template.md" "${STAGING}/templates/design-doc-template.md"
 cp "${ROOT}/templates/checklist.md" "${STAGING}/templates/checklist.md"
+cp "${ROOT}/templates/readme-for-homeworks-repo.md" "${STAGING}/README.md"
 
 cat > "${STAGING}/.gitignore" <<'EOF'
 .DS_Store

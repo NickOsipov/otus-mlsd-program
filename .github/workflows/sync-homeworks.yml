@@ -18,9 +18,9 @@ on:
       - "homeworks/**"
       - "templates/design-doc-template.md"
       - "templates/checklist.md"
+      - "templates/readme-for-homeworks-repo.md"
       - "scripts/sync-homeworks.sh"
       - "scripts/strip_teacher_notes.py"
-      - "scripts/write_student_readme.py"
       - ".github/workflows/sync-homeworks.yml"
   workflow_dispatch:
 
