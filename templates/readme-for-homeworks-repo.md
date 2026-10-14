@@ -20,6 +20,7 @@
 
 - [`templates/design-doc-template.md`](templates/design-doc-template.md) — шаблон design doc, по нему собирается итоговый документ;
 - [`templates/checklist.md`](templates/checklist.md) — чеклист самопроверки перед сдачей проекта.
+- [`templates/project-topics.md`](templates/project-topics.md) — список тем для итогового проекта.
 
 ## Как сдавать
 
