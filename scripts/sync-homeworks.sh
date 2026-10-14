@@ -36,6 +36,7 @@ shopt -u nullglob
 
 cp "${ROOT}/templates/design-doc-template.md" "${STAGING}/templates/design-doc-template.md"
 cp "${ROOT}/templates/checklist.md" "${STAGING}/templates/checklist.md"
+cp "${ROOT}/templates/project-topics.md" "${STAGING}/templates/project-topics.md"
 cp "${ROOT}/templates/readme-for-homeworks-repo.md" "${STAGING}/README.md"
 
 cat > "${STAGING}/.gitignore" <<'EOF'
